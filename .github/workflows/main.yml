@@ -32,19 +32,19 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./simple-api
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/TP-02-DevOps:simple-api
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-02-devops:simple-api
           push: ${{ github.ref == 'refs/heads/master' }}
           
       - name: Build image and push database
         uses: docker/build-push-action@v2
         with:
           context: ./database
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/TP-02-DevOps:database
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-02-devops:database
           push: ${{ github.ref == 'refs/heads/master' }}
           
       - name: Build image and push httpd
         uses: docker/build-push-action@v2
         with:
           context: ./httpd
-          tags: ${{secrets.DOCKERHUB_USERNAME}}/TP-02-DevOps:httpd
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/tp-02-devops:httpd
           push: ${{ github.ref == 'refs/heads/master' }}
